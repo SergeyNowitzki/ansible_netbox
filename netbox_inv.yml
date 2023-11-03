@@ -1,0 +1,9 @@
+---
+plugin: netbox.netbox.nb_inventory
+api_endpoint: http://0.0.0.0:8000/
+token: 4a87f9bac5de8775f104c9e81e205b8d2a7c6d6f
+validate_certs: False
+config_context: False
+group_by:
+ - device_roles
+ - sites

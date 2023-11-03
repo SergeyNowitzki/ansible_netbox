@@ -1,0 +1,13 @@
+# Playbook to push config file
+- hosts: all
+  connection: network_cli
+  gather_facts: false
+
+  tasks:
+  - name: Push config file
+    ios_config:
+      src: "./output/{{ inventory_hostname }}.cfg"
+  
+  - name: save running to startup when modified
+    ios_config:
+      save_when: modified

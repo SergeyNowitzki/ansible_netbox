@@ -1,0 +1,14 @@
+---
+
+- name: Create config using netbox
+  #hosts: device_roles_router
+  hosts: all
+  connection: local
+  gather_facts: False
+
+  tasks:
+    - name: Generate configs using data obtained from netbox
+      template:
+        src: "./templates/config_template.j2"
+        dest: "./output/{{ inventory_hostname }}.cfg"
+        lstrip_blocks: yes
